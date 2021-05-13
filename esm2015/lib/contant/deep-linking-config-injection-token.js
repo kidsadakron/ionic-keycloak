@@ -1,0 +1,11 @@
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ */
+/*
+ * Copyright (c) 2019. This Code is under license and belongs to Coding Motion
+ */
+import { InjectionToken } from '@angular/core';
+/** @type {?} */
+export const DEEP_LINKING_OPTIONS = new InjectionToken('DEEP_LINKING_OPTIONS');
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiZGVlcC1saW5raW5nLWNvbmZpZy1pbmplY3Rpb24tdG9rZW4uanMiLCJzb3VyY2VSb290Ijoibmc6Ly9AY21vdGlvbi9pb25pYy1rZXljbG9hay1hdXRoLyIsInNvdXJjZXMiOlsibGliL2NvbnRhbnQvZGVlcC1saW5raW5nLWNvbmZpZy1pbmplY3Rpb24tdG9rZW4udHMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6Ijs7Ozs7OztBQUlBLE9BQU8sRUFBQyxjQUFjLEVBQUMsTUFBTSxlQUFlLENBQUM7O0FBRTdDLE1BQU0sT0FBTyxvQkFBb0IsR0FBRyxJQUFJLGNBQWMsQ0FBQyxzQkFBc0IsQ0FBQyIsInNvdXJjZXNDb250ZW50IjpbIi8qXG4gKiBDb3B5cmlnaHQgKGMpIDIwMTkuIFRoaXMgQ29kZSBpcyB1bmRlciBsaWNlbnNlIGFuZCBiZWxvbmdzIHRvIENvZGluZyBNb3Rpb25cbiAqL1xuXG5pbXBvcnQge0luamVjdGlvblRva2VufSBmcm9tICdAYW5ndWxhci9jb3JlJztcblxuZXhwb3J0IGNvbnN0IERFRVBfTElOS0lOR19PUFRJT05TID0gbmV3IEluamVjdGlvblRva2VuKCdERUVQX0xJTktJTkdfT1BUSU9OUycpO1xuIl19

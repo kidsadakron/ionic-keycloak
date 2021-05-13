@@ -1,0 +1,8 @@
+import { JwtConfig } from '../model/jwt-config';
+import { AuthToken } from '../model/auth-token';
+export declare class StorageService {
+    private config;
+    constructor(config: JwtConfig);
+    setToken(value: AuthToken): Promise<void>;
+    getToken(): Promise<AuthToken>;
+}

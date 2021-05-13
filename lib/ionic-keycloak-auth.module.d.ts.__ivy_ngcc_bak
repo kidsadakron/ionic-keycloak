@@ -1,0 +1,12 @@
+import { ModuleWithProviders } from '@angular/core';
+import { Platform } from '@ionic/angular';
+import { DeepLinkService } from './service/deep-link.service';
+import { KeycloakAuthService } from './service/keycloak-auth.service';
+import { ModuleConfig } from './model/module-config';
+export declare class IonicKeycloakAuthModule {
+    private platform;
+    private authService;
+    private deepLinkService;
+    constructor(platform: Platform, authService: KeycloakAuthService, deepLinkService: DeepLinkService, parentModule: IonicKeycloakAuthModule);
+    static forRoot(config?: ModuleConfig): ModuleWithProviders;
+}

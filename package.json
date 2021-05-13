@@ -1,0 +1,67 @@
+{
+  "author": {
+    "name": "kidsadakron",
+    "email": "kidsadakron.hd@gmail.com"
+  },
+  "bugs": {
+    "url": "https://github.com/kidsadakron/ionic-keycloak/issues"
+  },
+  "homepage": "https://github.com/kidsadakron/ionic-keycloak#readme",
+  "dependencies": {
+    "tslib": "^1.9.0"
+  },
+  "description": "Authentication bei Keycloak for Ionic 4+",
+  "es2015_ivy_ngcc": "__ivy_ngcc__/fesm2015/cmotion-ionic-keycloak-auth.js",
+  "es2015": "fesm2015/cmotion-ionic-keycloak-auth.js",
+  "esm2015": "esm2015/cmotion-ionic-keycloak-auth.js",
+  "esm5": "esm5/cmotion-ionic-keycloak-auth.js",
+  "fesm2015_ivy_ngcc": "__ivy_ngcc__/fesm2015/cmotion-ionic-keycloak-auth.js",
+  "fesm2015": "fesm2015/cmotion-ionic-keycloak-auth.js",
+  "fesm5": "fesm5/cmotion-ionic-keycloak-auth.js",
+  "keywords": [
+    "angular",
+    "angular8",
+    "ionic",
+    "ionic4",
+    "cordova",
+    "keycloak",
+    "auth0"
+  ],
+  "license": "ISC",
+  "main": "bundles/cmotion-ionic-keycloak-auth.umd.js",
+  "metadata": "cmotion-ionic-keycloak-auth.metadata.json",
+  "module": "fesm5/cmotion-ionic-keycloak-auth.js",
+  "name": "@cmotion/ionic-keycloak-auth",
+  "peerDependencies": {
+    "@angular/common": "^8.1.1",
+    "@angular/core": "^8.1.1",
+    "@auth0/angular-jwt": "^3.0.0",
+    "@ionic-native/browser-tab": "^5.14.0",
+    "@ionic-native/core": "^5.0.0-beta.15",
+    "@ionic-native/deeplinks": "^5.14.0",
+    "@ionic-native/in-app-browser": "^5.0.0-beta.15",
+    "@ionic/angular": "^4.7.0",
+    "keycloak-js": "^6.0.1",
+    "rxjs": "^6.5.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kidsadakron/ionic-keycloak#.git"
+  },
+  "sideEffects": false,
+  "typings": "cmotion-ionic-keycloak-auth.d.ts",
+  "version": "0.0.8",
+  "__processed_by_ivy_ngcc__": {
+    "es2015": "11.0.2",
+    "esm2015": "11.0.2",
+    "esm5": "11.0.2",
+    "fesm2015": "11.0.2",
+    "fesm5": "11.0.2",
+    "main": "11.0.2",
+    "module": "11.0.2",
+    "typings": "11.0.2"
+  },
+  "scripts": {
+    "prepublishOnly": "node --eval \"console.error('ERROR: Trying to publish a package that has been compiled by NGCC. This is not allowed.\\nPlease delete and rebuild the package, without compiling with NGCC, before attempting to publish.\\nNote that NGCC may have been run by importing this package into another project that is being built with Ivy enabled.\\n')\" && exit 1"
+  }
+}

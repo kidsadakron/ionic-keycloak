@@ -1,0 +1,50 @@
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ */
+import * as tslib_1 from "tslib";
+/*
+ * Copyright (c) 2019. This Code is under license and belongs to Coding Motion
+ */
+import { Inject, Injectable } from '@angular/core';
+import { JWT_GET_AND_SETTER } from '../contant/jwt-injection-token';
+export class StorageService {
+    /**
+     * @param {?} config
+     */
+    constructor(config) {
+        this.config = config;
+    }
+    /**
+     * @param {?} value
+     * @return {?}
+     */
+    setToken(value) {
+        return tslib_1.__awaiter(this, void 0, void 0, function* () {
+            return this.config.setToken(value);
+        });
+    }
+    /**
+     * @return {?}
+     */
+    getToken() {
+        return tslib_1.__awaiter(this, void 0, void 0, function* () {
+            return this.config.getToken();
+        });
+    }
+}
+StorageService.decorators = [
+    { type: Injectable }
+];
+/** @nocollapse */
+StorageService.ctorParameters = () => [
+    { type: undefined, decorators: [{ type: Inject, args: [JWT_GET_AND_SETTER,] }] }
+];
+if (false) {
+    /**
+     * @type {?}
+     * @private
+     */
+    StorageService.prototype.config;
+}
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoic3RvcmFnZS5zZXJ2aWNlLmpzIiwic291cmNlUm9vdCI6Im5nOi8vQGNtb3Rpb24vaW9uaWMta2V5Y2xvYWstYXV0aC8iLCJzb3VyY2VzIjpbImxpYi9zZXJ2aWNlL3N0b3JhZ2Uuc2VydmljZS50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiOzs7Ozs7OztBQUlBLE9BQU8sRUFBQyxNQUFNLEVBQUUsVUFBVSxFQUFDLE1BQU0sZUFBZSxDQUFDO0FBR2pELE9BQU8sRUFBQyxrQkFBa0IsRUFBQyxNQUFNLGdDQUFnQyxDQUFDO0FBR2xFLE1BQU0sT0FBTyxjQUFjOzs7O0lBRXpCLFlBQ3NDLE1BQWlCO1FBQWpCLFdBQU0sR0FBTixNQUFNLENBQVc7SUFFdkQsQ0FBQzs7Ozs7SUFFWSxRQUFRLENBQUMsS0FBZ0I7O1lBQ3BDLE9BQU8sSUFBSSxDQUFDLE1BQU0sQ0FBQyxRQUFRLENBQUMsS0FBSyxDQUFDLENBQUM7UUFDckMsQ0FBQztLQUFBOzs7O0lBRVksUUFBUTs7WUFDbkIsT0FBTyxJQUFJLENBQUMsTUFBTSxDQUFDLFFBQVEsRUFBRSxDQUFDO1FBQ2hDLENBQUM7S0FBQTs7O1lBZEYsVUFBVTs7Ozs0Q0FJTixNQUFNLFNBQUMsa0JBQWtCOzs7Ozs7O0lBQTFCLGdDQUFxRCIsInNvdXJjZXNDb250ZW50IjpbIi8qXG4gKiBDb3B5cmlnaHQgKGMpIDIwMTkuIFRoaXMgQ29kZSBpcyB1bmRlciBsaWNlbnNlIGFuZCBiZWxvbmdzIHRvIENvZGluZyBNb3Rpb25cbiAqL1xuXG5pbXBvcnQge0luamVjdCwgSW5qZWN0YWJsZX0gZnJvbSAnQGFuZ3VsYXIvY29yZSc7XG5pbXBvcnQge0p3dENvbmZpZ30gZnJvbSAnLi4vbW9kZWwvand0LWNvbmZpZyc7XG5pbXBvcnQge0F1dGhUb2tlbn0gZnJvbSAnLi4vbW9kZWwvYXV0aC10b2tlbic7XG5pbXBvcnQge0pXVF9HRVRfQU5EX1NFVFRFUn0gZnJvbSAnLi4vY29udGFudC9qd3QtaW5qZWN0aW9uLXRva2VuJztcblxuQEluamVjdGFibGUoKVxuZXhwb3J0IGNsYXNzIFN0b3JhZ2VTZXJ2aWNlIHtcblxuICBjb25zdHJ1Y3RvcihcbiAgICBASW5qZWN0KEpXVF9HRVRfQU5EX1NFVFRFUikgcHJpdmF0ZSBjb25maWc6IEp3dENvbmZpZyxcbiAgKSB7XG4gIH1cblxuICBwdWJsaWMgYXN5bmMgc2V0VG9rZW4odmFsdWU6IEF1dGhUb2tlbik6IFByb21pc2U8dm9pZD4ge1xuICAgIHJldHVybiB0aGlzLmNvbmZpZy5zZXRUb2tlbih2YWx1ZSk7XG4gIH1cblxuICBwdWJsaWMgYXN5bmMgZ2V0VG9rZW4oKTogUHJvbWlzZTxBdXRoVG9rZW4+IHtcbiAgICByZXR1cm4gdGhpcy5jb25maWcuZ2V0VG9rZW4oKTtcbiAgfVxuXG59XG4iXX0=

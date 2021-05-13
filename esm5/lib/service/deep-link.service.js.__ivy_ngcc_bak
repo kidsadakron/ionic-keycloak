@@ -1,0 +1,169 @@
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ */
+import * as tslib_1 from "tslib";
+/*
+ * Copyright (c) 2019. This Code is under license and belongs to Coding Motion
+ */
+import { Injectable } from '@angular/core';
+import { Subject } from 'rxjs';
+import { filter } from 'rxjs/operators';
+import { Deeplinks } from '@ionic-native/deeplinks/ngx';
+import { NavController } from '@ionic/angular';
+var DeepLinkService = /** @class */ (function () {
+    function DeepLinkService(navController, deepLinks) {
+        this.navController = navController;
+        this.deepLinks = deepLinks;
+        this.paramsSubject = new Subject();
+    }
+    /**
+     * @return {?}
+     */
+    DeepLinkService.prototype.params = /**
+     * @return {?}
+     */
+    function () {
+        return this.paramsSubject
+            .pipe(filter((/**
+         * @param {?} str
+         * @return {?}
+         */
+        function (str) { return !!str; })));
+    };
+    /**
+     * @return {?}
+     */
+    DeepLinkService.prototype.init = /**
+     * @return {?}
+     */
+    function () {
+        var _this = this;
+        this.deepLinks
+            .route({})
+            .subscribe((/**
+         * @param {?} match
+         * @return {?}
+         */
+        function (match) {
+            // match.$route - the route we matched, which is the matched entry from the arguments to route()
+            // match.$args - the args passed in the link
+            // match.$link - the full link data
+            _this.extractData(match.$link);
+        }), (/**
+         * @param {?} nomatch
+         * @return {?}
+         */
+        function (nomatch) {
+            // nomatch.$link - the full link data
+            _this.extractData(nomatch.$link);
+        }));
+    };
+    /**
+     * @private
+     * @param {?} $link
+     * @return {?}
+     */
+    DeepLinkService.prototype.extractData = /**
+     * @private
+     * @param {?} $link
+     * @return {?}
+     */
+    function ($link) {
+        if ($link) {
+            var path = $link.path, fragment = $link.fragment, host = $link.host, scheme = $link.scheme, url = $link.url;
+            if (this.containsCode(fragment)) {
+                /** @type {?} */
+                var extractCode = this.extractCode(fragment);
+                this.nextParams(extractCode.code);
+            }
+        }
+    };
+    /**
+     * @private
+     * @param {?} url
+     * @return {?}
+     */
+    DeepLinkService.prototype.extractCode = /**
+     * @private
+     * @param {?} url
+     * @return {?}
+     */
+    function (url) {
+        /** @type {?} */
+        var hashes = url.slice(url.indexOf('?') + 1).split('&');
+        /** @type {?} */
+        var paramsObj = hashes.reduce((/**
+         * @param {?} params
+         * @param {?} hash
+         * @return {?}
+         */
+        function (params, hash) {
+            var _a;
+            var _b = tslib_1.__read(hash.split('='), 2), key = _b[0], val = _b[1];
+            return Object.assign(params, (_a = {}, _a[key] = decodeURIComponent(val), _a));
+        }), (/** @type {?} */ ({})));
+        if ((!paramsObj) || (!paramsObj.code)) {
+            return;
+        }
+        paramsObj.code = ((/** @type {?} */ (paramsObj.code))).split('#')[0];
+        return paramsObj;
+    };
+    /**
+     * @private
+     * @param {?} code
+     * @return {?}
+     */
+    DeepLinkService.prototype.nextParams = /**
+     * @private
+     * @param {?} code
+     * @return {?}
+     */
+    function (code) {
+        this.paramsSubject.next(code);
+    };
+    /**
+     * @private
+     * @param {?} fragment
+     * @return {?}
+     */
+    DeepLinkService.prototype.containsCode = /**
+     * @private
+     * @param {?} fragment
+     * @return {?}
+     */
+    function (fragment) {
+        if (!fragment) {
+            return false;
+        }
+        return fragment.indexOf('code') > -1;
+    };
+    DeepLinkService.decorators = [
+        { type: Injectable }
+    ];
+    /** @nocollapse */
+    DeepLinkService.ctorParameters = function () { return [
+        { type: NavController },
+        { type: Deeplinks }
+    ]; };
+    return DeepLinkService;
+}());
+export { DeepLinkService };
+if (false) {
+    /**
+     * @type {?}
+     * @private
+     */
+    DeepLinkService.prototype.paramsSubject;
+    /**
+     * @type {?}
+     * @private
+     */
+    DeepLinkService.prototype.navController;
+    /**
+     * @type {?}
+     * @private
+     */
+    DeepLinkService.prototype.deepLinks;
+}
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiZGVlcC1saW5rLnNlcnZpY2UuanMiLCJzb3VyY2VSb290Ijoibmc6Ly9AY21vdGlvbi9pb25pYy1rZXljbG9hay1hdXRoLyIsInNvdXJjZXMiOlsibGliL3NlcnZpY2UvZGVlcC1saW5rLnNlcnZpY2UudHMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6Ijs7Ozs7Ozs7QUFJQSxPQUFPLEVBQUMsVUFBVSxFQUFDLE1BQU0sZUFBZSxDQUFDO0FBQ3pDLE9BQU8sRUFBQyxPQUFPLEVBQUMsTUFBTSxNQUFNLENBQUM7QUFDN0IsT0FBTyxFQUFDLE1BQU0sRUFBQyxNQUFNLGdCQUFnQixDQUFDO0FBQ3RDLE9BQU8sRUFBZ0IsU0FBUyxFQUFDLE1BQU0sNkJBQTZCLENBQUM7QUFDckUsT0FBTyxFQUFDLGFBQWEsRUFBQyxNQUFNLGdCQUFnQixDQUFDO0FBRzdDO0lBS0UseUJBQW9CLGFBQTRCLEVBQzVCLFNBQW9CO1FBRHBCLGtCQUFhLEdBQWIsYUFBYSxDQUFlO1FBQzVCLGNBQVMsR0FBVCxTQUFTLENBQVc7UUFIaEMsa0JBQWEsR0FBRyxJQUFJLE9BQU8sRUFBVSxDQUFDO0lBSTlDLENBQUM7Ozs7SUFFRCxnQ0FBTTs7O0lBQU47UUFDRSxPQUFPLElBQUksQ0FBQyxhQUFhO2FBQ3RCLElBQUksQ0FBQyxNQUFNOzs7O1FBQUMsVUFBQSxHQUFHLElBQUksT0FBQSxDQUFDLENBQUMsR0FBRyxFQUFMLENBQUssRUFBQyxDQUFDLENBQUM7SUFDaEMsQ0FBQzs7OztJQUVELDhCQUFJOzs7SUFBSjtRQUFBLGlCQWVDO1FBZEMsSUFBSSxDQUFDLFNBQVM7YUFDWCxLQUFLLENBQUMsRUFBRSxDQUFDO2FBQ1QsU0FBUzs7OztRQUNSLFVBQUMsS0FBb0I7WUFDbkIsZ0dBQWdHO1lBQ2hHLDRDQUE0QztZQUM1QyxtQ0FBbUM7WUFDbkMsS0FBSSxDQUFDLFdBQVcsQ0FBQyxLQUFLLENBQUMsS0FBSyxDQUFDLENBQUM7UUFDaEMsQ0FBQzs7OztRQUNELFVBQUEsT0FBTztZQUNMLHFDQUFxQztZQUNyQyxLQUFJLENBQUMsV0FBVyxDQUFDLE9BQU8sQ0FBQyxLQUFLLENBQUMsQ0FBQztRQUNsQyxDQUFDLEVBQ0YsQ0FBQztJQUNOLENBQUM7Ozs7OztJQUVPLHFDQUFXOzs7OztJQUFuQixVQUFvQixLQUFLO1FBQ3ZCLElBQUksS0FBSyxFQUFFO1lBQ0YsSUFBQSxpQkFBSSxFQUFFLHlCQUFRLEVBQUUsaUJBQUksRUFBRSxxQkFBTSxFQUFFLGVBQUc7WUFDeEMsSUFBSSxJQUFJLENBQUMsWUFBWSxDQUFDLFFBQVEsQ0FBQyxFQUFFOztvQkFDekIsV0FBVyxHQUFHLElBQUksQ0FBQyxXQUFXLENBQUMsUUFBUSxDQUFDO2dCQUM5QyxJQUFJLENBQUMsVUFBVSxDQUFDLFdBQVcsQ0FBQyxJQUFJLENBQUMsQ0FBQzthQUNuQztTQUNGO0lBQ0gsQ0FBQzs7Ozs7O0lBRU8scUNBQVc7Ozs7O0lBQW5CLFVBQW9CLEdBQVc7O1lBQ3ZCLE1BQU0sR0FBRyxHQUFHLENBQUMsS0FBSyxDQUFDLEdBQUcsQ0FBQyxPQUFPLENBQUMsR0FBRyxDQUFDLEdBQUcsQ0FBQyxDQUFDLENBQUMsS0FBSyxDQUFDLEdBQUcsQ0FBQzs7WUFDbkQsU0FBUyxHQUFHLE1BQU0sQ0FBQyxNQUFNOzs7OztRQUFDLFVBQUMsTUFBTSxFQUFFLElBQUk7O1lBQ3JDLElBQUEsdUNBQTRCLEVBQTNCLFdBQUcsRUFBRSxXQUFzQjtZQUNsQyxPQUFPLE1BQU0sQ0FBQyxNQUFNLENBQUMsTUFBTSxZQUFHLEdBQUMsR0FBRyxJQUFHLGtCQUFrQixDQUFDLEdBQUcsQ0FBQyxNQUFFLENBQUM7UUFDakUsQ0FBQyxHQUFFLG1CQUFBLEVBQUUsRUFBZSxDQUFDO1FBQ3JCLElBQUksQ0FBQyxDQUFDLFNBQVMsQ0FBQyxJQUFJLENBQUMsQ0FBQyxTQUFTLENBQUMsSUFBSSxDQUFDLEVBQUU7WUFDckMsT0FBTztTQUNSO1FBQ0QsU0FBUyxDQUFDLElBQUksR0FBRyxDQUFDLG1CQUFBLFNBQVMsQ0FBQyxJQUFJLEVBQVUsQ0FBQyxDQUFDLEtBQUssQ0FBQyxHQUFHLENBQUMsQ0FBQyxDQUFDLENBQUMsQ0FBQztRQUMxRCxPQUFPLFNBQVMsQ0FBQztJQUNuQixDQUFDOzs7Ozs7SUFFTyxvQ0FBVTs7Ozs7SUFBbEIsVUFBbUIsSUFBWTtRQUM3QixJQUFJLENBQUMsYUFBYSxDQUFDLElBQUksQ0FBQyxJQUFJLENBQUMsQ0FBQztJQUNoQyxDQUFDOzs7Ozs7SUFFTyxzQ0FBWTs7Ozs7SUFBcEIsVUFBcUIsUUFBZ0I7UUFDbkMsSUFBSSxDQUFDLFFBQVEsRUFBRTtZQUNiLE9BQU8sS0FBSyxDQUFDO1NBQ2Q7UUFDRCxPQUFPLFFBQVEsQ0FBQyxPQUFPLENBQUMsTUFBTSxDQUFDLEdBQUcsQ0FBQyxDQUFDLENBQUM7SUFDdkMsQ0FBQzs7Z0JBL0RGLFVBQVU7Ozs7Z0JBSEgsYUFBYTtnQkFERSxTQUFTOztJQW9FaEMsc0JBQUM7Q0FBQSxBQWhFRCxJQWdFQztTQS9EWSxlQUFlOzs7Ozs7SUFFMUIsd0NBQThDOzs7OztJQUVsQyx3Q0FBb0M7Ozs7O0lBQ3BDLG9DQUE0QiIsInNvdXJjZXNDb250ZW50IjpbIi8qXG4gKiBDb3B5cmlnaHQgKGMpIDIwMTkuIFRoaXMgQ29kZSBpcyB1bmRlciBsaWNlbnNlIGFuZCBiZWxvbmdzIHRvIENvZGluZyBNb3Rpb25cbiAqL1xuXG5pbXBvcnQge0luamVjdGFibGV9IGZyb20gJ0Bhbmd1bGFyL2NvcmUnO1xuaW1wb3J0IHtTdWJqZWN0fSBmcm9tICdyeGpzJztcbmltcG9ydCB7ZmlsdGVyfSBmcm9tICdyeGpzL29wZXJhdG9ycyc7XG5pbXBvcnQge0RlZXBsaW5rTWF0Y2gsIERlZXBsaW5rc30gZnJvbSAnQGlvbmljLW5hdGl2ZS9kZWVwbGlua3Mvbmd4JztcbmltcG9ydCB7TmF2Q29udHJvbGxlcn0gZnJvbSAnQGlvbmljL2FuZ3VsYXInO1xuaW1wb3J0IHtLZXlWYWx1ZVN0cn0gZnJvbSAnLi4vbW9kZWwva2V5LXZhbHVlLXN0cic7XG5cbkBJbmplY3RhYmxlKClcbmV4cG9ydCBjbGFzcyBEZWVwTGlua1NlcnZpY2Uge1xuXG4gIHByaXZhdGUgcGFyYW1zU3ViamVjdCA9IG5ldyBTdWJqZWN0PHN0cmluZz4oKTtcblxuICBjb25zdHJ1Y3Rvcihwcml2YXRlIG5hdkNvbnRyb2xsZXI6IE5hdkNvbnRyb2xsZXIsXG4gICAgICAgICAgICAgIHByaXZhdGUgZGVlcExpbmtzOiBEZWVwbGlua3MpIHtcbiAgfVxuXG4gIHBhcmFtcygpIHtcbiAgICByZXR1cm4gdGhpcy5wYXJhbXNTdWJqZWN0XG4gICAgICAucGlwZShmaWx0ZXIoc3RyID0+ICEhc3RyKSk7XG4gIH1cblxuICBpbml0KCkge1xuICAgIHRoaXMuZGVlcExpbmtzXG4gICAgICAucm91dGUoe30pXG4gICAgICAuc3Vic2NyaWJlKFxuICAgICAgICAobWF0Y2g6IERlZXBsaW5rTWF0Y2gpID0+IHtcbiAgICAgICAgICAvLyBtYXRjaC4kcm91dGUgLSB0aGUgcm91dGUgd2UgbWF0Y2hlZCwgd2hpY2ggaXMgdGhlIG1hdGNoZWQgZW50cnkgZnJvbSB0aGUgYXJndW1lbnRzIHRvIHJvdXRlKClcbiAgICAgICAgICAvLyBtYXRjaC4kYXJncyAtIHRoZSBhcmdzIHBhc3NlZCBpbiB0aGUgbGlua1xuICAgICAgICAgIC8vIG1hdGNoLiRsaW5rIC0gdGhlIGZ1bGwgbGluayBkYXRhXG4gICAgICAgICAgdGhpcy5leHRyYWN0RGF0YShtYXRjaC4kbGluayk7XG4gICAgICAgIH0sXG4gICAgICAgIG5vbWF0Y2ggPT4ge1xuICAgICAgICAgIC8vIG5vbWF0Y2guJGxpbmsgLSB0aGUgZnVsbCBsaW5rIGRhdGFcbiAgICAgICAgICB0aGlzLmV4dHJhY3REYXRhKG5vbWF0Y2guJGxpbmspO1xuICAgICAgICB9XG4gICAgICApO1xuICB9XG5cbiAgcHJpdmF0ZSBleHRyYWN0RGF0YSgkbGluaykge1xuICAgIGlmICgkbGluaykge1xuICAgICAgY29uc3Qge3BhdGgsIGZyYWdtZW50LCBob3N0LCBzY2hlbWUsIHVybH0gPSAkbGluaztcbiAgICAgIGlmICh0aGlzLmNvbnRhaW5zQ29kZShmcmFnbWVudCkpIHtcbiAgICAgICAgY29uc3QgZXh0cmFjdENvZGUgPSB0aGlzLmV4dHJhY3RDb2RlKGZyYWdtZW50KTtcbiAgICAgICAgdGhpcy5uZXh0UGFyYW1zKGV4dHJhY3RDb2RlLmNvZGUpO1xuICAgICAgfVxuICAgIH1cbiAgfVxuXG4gIHByaXZhdGUgZXh0cmFjdENvZGUodXJsOiBzdHJpbmcpIHtcbiAgICBjb25zdCBoYXNoZXMgPSB1cmwuc2xpY2UodXJsLmluZGV4T2YoJz8nKSArIDEpLnNwbGl0KCcmJyk7XG4gICAgY29uc3QgcGFyYW1zT2JqID0gaGFzaGVzLnJlZHVjZSgocGFyYW1zLCBoYXNoKSA9PiB7XG4gICAgICBjb25zdCBba2V5LCB2YWxdID0gaGFzaC5zcGxpdCgnPScpO1xuICAgICAgcmV0dXJuIE9iamVjdC5hc3NpZ24ocGFyYW1zLCB7W2tleV06IGRlY29kZVVSSUNvbXBvbmVudCh2YWwpfSk7XG4gICAgfSwge30gYXMgS2V5VmFsdWVTdHIpO1xuICAgIGlmICgoIXBhcmFtc09iaikgfHwgKCFwYXJhbXNPYmouY29kZSkpIHtcbiAgICAgIHJldHVybjtcbiAgICB9XG4gICAgcGFyYW1zT2JqLmNvZGUgPSAocGFyYW1zT2JqLmNvZGUgYXMgc3RyaW5nKS5zcGxpdCgnIycpWzBdO1xuICAgIHJldHVybiBwYXJhbXNPYmo7XG4gIH1cblxuICBwcml2YXRlIG5leHRQYXJhbXMoY29kZTogc3RyaW5nKSB7XG4gICAgdGhpcy5wYXJhbXNTdWJqZWN0Lm5leHQoY29kZSk7XG4gIH1cblxuICBwcml2YXRlIGNvbnRhaW5zQ29kZShmcmFnbWVudDogc3RyaW5nKSB7XG4gICAgaWYgKCFmcmFnbWVudCkge1xuICAgICAgcmV0dXJuIGZhbHNlO1xuICAgIH1cbiAgICByZXR1cm4gZnJhZ21lbnQuaW5kZXhPZignY29kZScpID4gLTE7XG4gIH1cbn1cbiJdfQ==

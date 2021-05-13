@@ -1,0 +1,11 @@
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ */
+/*
+ * Copyright (c) 2019. This Code is under license and belongs to Coding Motion
+ */
+import { InjectionToken } from '@angular/core';
+/** @type {?} */
+export const JWT_GET_AND_SETTER = new InjectionToken('JWT_GET_AND_SETTER');
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiand0LWluamVjdGlvbi10b2tlbi5qcyIsInNvdXJjZVJvb3QiOiJuZzovL0BjbW90aW9uL2lvbmljLWtleWNsb2FrLWF1dGgvIiwic291cmNlcyI6WyJsaWIvY29udGFudC9qd3QtaW5qZWN0aW9uLXRva2VuLnRzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7Ozs7Ozs7QUFJQSxPQUFPLEVBQUMsY0FBYyxFQUFDLE1BQU0sZUFBZSxDQUFDOztBQUU3QyxNQUFNLE9BQU8sa0JBQWtCLEdBQUcsSUFBSSxjQUFjLENBQUMsb0JBQW9CLENBQUMiLCJzb3VyY2VzQ29udGVudCI6WyIvKlxuICogQ29weXJpZ2h0IChjKSAyMDE5LiBUaGlzIENvZGUgaXMgdW5kZXIgbGljZW5zZSBhbmQgYmVsb25ncyB0byBDb2RpbmcgTW90aW9uXG4gKi9cblxuaW1wb3J0IHtJbmplY3Rpb25Ub2tlbn0gZnJvbSAnQGFuZ3VsYXIvY29yZSc7XG5cbmV4cG9ydCBjb25zdCBKV1RfR0VUX0FORF9TRVRURVIgPSBuZXcgSW5qZWN0aW9uVG9rZW4oJ0pXVF9HRVRfQU5EX1NFVFRFUicpO1xuIl19
